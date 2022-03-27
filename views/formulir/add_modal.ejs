@@ -20,23 +20,26 @@
                   <input type="text" name="nama" class="form-control" required>
               </div>
               <div class="form-group">
-                <label for="">TTL :</label>
-                <input type="date" name="TTL" class="form-control" required>
+                <label for="">Suhu Badan :</label>
+                <input type="number" name="suhu" class="form-control" required>
+            </div>
+  
+              <div class="form-group">
+                <label for="">TTL :
+                <input type="date" name="TTL" ></label>
             </div>
             <div class="form-group">
               <label for="">Usia :</label>
               <input type="number" name="usia" class="form-control" required>
           </div>
-          <div class="form-group">
-            <label for="">Jenis Kelamin</label>
-            <div class="radio inline">
-              <input type="radio" name="jeniskelamin" value="Laki-Laki" required>
-              <label for="">Laki - Laki</label>
-            </div>
-            <div class="radio inline">
-              <input type="radio" name="jeniskelamin" value="Perempuan" required>
-              <label for="">Perempuan</label>
-            </div>
+            <div class="form-group">
+            <label for="">Jenis Kelamin : </label>
+            <label class="radio inline" >
+              <input type="radio" name="jeniskelamin" value="Laki-Laki"  required>Laki - Laki  
+            </label>
+            <label class="radio inline">
+              <input type="radio" name="jeniskelamin" value="Perempuan"  required>Perempuan  
+            </label>
 
             <div class="form-group">
                 <label for="">No ktp :</label>
@@ -57,21 +60,91 @@
             </div>
 
             <div class="form-group">
-              <label for="">Hasil Swab TEST</label>
-              <div class="radio inline">
-                <input type="radio" name="hasil" value="positif" required>
-                <label for="">POSITIF</label>
+              <label for="keluhan">Keluhan : </label>
+              <div class="checkbox inline">
+                  <input type="checkbox" name="keluhan" value="Batuk">
+                  <label for="keluhan">Batuk</label>
               </div>
-              <div class="radio inline">
-                <input type="radio" name="hasil" value="negatif" required>
-                <label for="">NEGATIF</label>
+              <div class="checkbox inline">
+                  <input type="checkbox" name="keluhan" value="Pilek">
+                  <label for="keluhan">Pilek</label>
               </div>
-              <div class="radio inline">
-                <input type="radio" name="hasil" value="invalid" required>
-                <label for="">INVALID</label>
+              <div class="checkbox inline">
+                  <input type="checkbox" name="keluhan" value="Sakit Tenggorokan">
+                  <label for="keluhan">Sakit Tenggorokan</label>
               </div>
-
+              <div class="checkbox inline">
+                  <input type="checkbox" name="keluhan" value="Sesak">
+                  <label for="keluhan">Sesak</label>
+              </div>
+              <div class="checkbox inline">
+                  <input type="checkbox" name="keluhan" value="Menggigil">
+                  <label for="keluhan">Menggigil</label>
+              </div>
+              <div class="checkbox inline">
+                  <input type="checkbox" name="keluhan" value="Pusing">
+                  <label for="keluhan">Pusing </label>
+              </div>
+              <div class="checkbox inline">
+                  <input type="checkbox" name="keluhan" value="Mual">
+                  <label for="keluhan">Mual</label>
+              </div>
+              <div class="checkbox inline">
+                  <input type="checkbox" name="keluhan" value="Muntah">
+                  <label for="keluhan">Muntah</label>
+              </div>
+              <div class="checkbox inline">
+                  <input type="checkbox" name="keluhan" value="Diare">
+                  <label for="keluhan">Diare</label>
+              </div>
+          </div>
+            
+          <div class="form-group">
+            <label for="penyakit">Penyakit Penyerta : </label>
+            <div class="checkbox inline">
+                <input type="checkbox" name="penyakit" value="Diabetes">
+                <label for="penyakit">Diabetes</label>
             </div>
+            <div class="checkbox inline">
+                <input type="checkbox" name="penyakit" value="Jantung">
+                <label for="penyakit">Jantung</label>
+            </div>
+            <div class="checkbox inline">
+                <input type="checkbox" name="penyakit" value="Hipertensi">
+                <label for="penyakit">Hipertensi</label>
+            </div>
+            <div class="checkbox inline">
+                <input type="checkbox" name="penyakit" value="Ginjal">
+                <label for="penyakit">Ginjal</label>
+            </div>
+            <div class="checkbox inline">
+                <input type="checkbox" name="penyakit" value="Keganasan">
+                <label for="penyakit">Keganasan</label>
+            </div>
+            <div class="checkbox inline">
+                <input type="checkbox" name="penyakit" value="PPOK">
+                <label for="penyakit" >PPOK</label>
+            </div>  
+            <div class="checkbox inline">
+                <input type="checkbox" name="penyakit" value="Lainnya">
+                <label for="penyakit" >Lainnya</label>
+            </div>                
+        </div>
+    
+            <div class="form-group">
+              <label for="">Hasil Swab TEST = </label>
+              <label class="radio inline">
+                <input type="radio" name="hasil" value="positif" required>POSITIF 
+              </label>
+              <label class="radio inline">
+                <input type="radio" name="hasil" value="negatif" required>NEGATIF 
+              </label>
+              <label class="radio inline">
+                <input type="radio" name="hasil" value="invalid" required>INVALID 
+              </label>
+            </div>
+        
+            
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

@@ -33,18 +33,19 @@
     <% } %>
     
     <!--TABLE-->
-    <div class="row">
+    <div class="row" >
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
             <%- include('add_modal.ejs') %>
           </div>
           <div class="card-body">
-            <table class="table table-bordered" id="dataTable">
-            <thead>
-              <tr>
+              <table class="table table-responsive" id="dataTable">
+              <thead class="thead-dark">
+              <tr class="table table-bordered">
                 <th>No.</th>
                 <th>Nama</th>
+                <th>Suhu</th>
                 <th>TTL</th>
                 <th>Usia</th>
                 <th>Jenis Kelamin</th>
@@ -52,7 +53,9 @@
                 <th>Alamat</th>
                 <th>No Hp</th>
                 <th>Email</th>
-                <th>Hasil Swab TEST</th>
+                <th>Keluhan</th>
+                <th>Penyakit Penyerta</th>
+                <th>Hasil Swab</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -61,6 +64,7 @@
               <tr>
                 <td><%= (i+1) %></td>
                 <td><%= formulir[i].nama %></td>
+                <td><%= formulir[i].suhu %></td>
                 <td><%= formulir[i].TTL %></td>
                 <td><%= formulir[i].usia %></td>
                 <td><%= formulir[i].jeniskelamin %></td>
@@ -68,20 +72,27 @@
                 <td><%= formulir[i].alamat %></td>
                 <td><%= formulir[i].nohp %></td>
                 <td><%= formulir[i].email %></td>
+                <td><%= formulir[i].keluhan %></td>
+                <td><%= formulir[i].penyakit %></td>
                 <td><%= formulir[i].hasil %></td>
+
                 <td>
                   <div class="d-flex">
                     <a href="javascript:void()"
                   data-id="<%= formulir[i].id%>"
                   data-nama="<%= formulir[i].nama%>"
+                  data-suhu="<%= formulir[i].suhu%>"
                   data-TTL="<%= formulir[i].TTL%>"
                   data-usia="<%= formulir[i].usia%>"
-                  data-usia="<%= formulir[i].jeniskelamin%>"
+                  data-jeniskelamin="<%= formulir[i].jeniskelamin%>"
                   data-noktp="<%= formulir[i].noktp%>"
                   data-alamat="<%= formulir[i].alamat%>"
                   data-nohp="<%= formulir[i].nohp%>"
                   data-email="<%= formulir[i].email%>"
+                  data-keluhan="<%= formulir[i].keluhan%>"
+                  data-penyakit="<%= formulir[i].penyakit%>"
                   data-hasil="<%= formulir[i].hasil%>"
+
                   class="btn btn-sm btn-info button-update mr-2">Edit</a>
 
                   <form action="/formulir/delete/<%=formulir[i].id %>?_method=DELETE" method="POST">
@@ -93,6 +104,7 @@
               <% } %>
             </tbody>
           </table>
+        
           </div>
         </div>
       </div>
@@ -107,10 +119,12 @@
   
   <%-include('edit_modal.ejs') %>
 
+  
   <script>
     $("#dataTable").on("click", ".button-update", function(){
       let id = $(this).data("id");
       let nama = $(this).data("nama");
+      let suhu = $(this).data("suhu");
       let TTL = $(this).data("TTL");
       let usia = $(this).data("usia");
       let jeniskelamin= $(this).data("jeniskelamin");
@@ -118,12 +132,17 @@
       let alamat = $(this).data("alamat");
       let nohp = $(this).data("nohp");
       let email = $(this).data("email");
+      let keluhan= $(this).data("keluhan");
+      let penyakit= $(this).data("penyakit");
       let hasil = $(this).data("hasil");
+
+      
 
       $("#edit-modal").modal("show");
 
       $(".id").val(id);
       $(".nama").val(nama);
+      $(".suhu").val(suhu);
       $(".TTL").val(TTL);
       $(".usia").val(usia);
       $(".jeniskelamin").val(jeniskelamin);
@@ -131,7 +150,11 @@
       $(".alamat").val(alamat);
       $(".nohp").val(nohp);
       $(".email").val(email);
+      $(".keluhan").val(keluhan);
+      $(".penyakit").val(penyakit);
       $(".hasil").val(hasil);
+
+
 
     })
   </script>

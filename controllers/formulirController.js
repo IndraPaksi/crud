@@ -16,9 +16,9 @@ module.exports = {
     },
     store:async(req, res)=>{
         try {
-            const {nama, TTL, usia, jeniskelamin, noktp, alamat, nohp, email, hasil} = req.body;
+            const {nama, suhu, TTL, usia, jeniskelamin, noktp, alamat, nohp, email, keluhan, penyakit, hasil} = req.body;
              
-            await Formulir.create({nama, TTL, usia, jeniskelamin, noktp, alamat, nohp, email,hasil});
+            await Formulir.create({nama, suhu, TTL, usia, jeniskelamin, noktp, alamat, nohp, email, keluhan, penyakit, hasil});
 
             req.flash('success', 'Data berhasil ditambahkan');
             res.redirect('/formulir');
@@ -30,9 +30,10 @@ module.exports = {
     },
     update:async(req, res)=>{
         try {
-            const { id, nama, TTL, usia, jeniskelamin, noktp, alamat, nohp, email, hasil} = req.body;
-            let formulir = await Formulir.findOne({_id: id});
+            const { id, nama, suhu, TTL, usia, jeniskelamin, noktp, alamat, nohp, email,  keluhan, penyakit,hasil} = req.body;
+            let formulir = await Formulir.findById({_id: id});
             formulir.nama = nama;
+            formulir.suhu = suhu;
             formulir.TTL = TTL;
             formulir.usia = usia;
             formulir.jeniskelamin = jeniskelamin;
@@ -40,7 +41,10 @@ module.exports = {
             formulir.alamat = alamat;
             formulir.nohp = nohp;
             formulir.email = email;
+            formulir.keluhan = keluhan;
+            formulir.penyakit = penyakit;
             formulir.hasil = hasil;
+
             await formulir.save();
 
             req.flash('success', 'Data berhasil di update');

@@ -5,22 +5,19 @@ const formulirSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    TTL: {
-        type: String,
+    suhu:{
+        type:Number,
         required:true,
+    },
+    TTL: {
+        type: Number
     },
     usia:{
         type:Number,
         required:true,
     },
-    jeniskelamin:{
-        type:String,
-        required:true,
-    },
-    alamat: {
-        type:String,
-        required:true,
-    },
+    jeniskelamin:String,
+    
     noktp:{
         type: Number,
         required:true,
@@ -37,10 +34,18 @@ const formulirSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    keluhan:{
+        type:Array
+    },
+    
+    penyakit:{
+        type:Array
+    },
     hasil:{
         type:String,
         required:true,
-    }
+    },  
+    
 });
 
 module.exports = mongoose.model('formulirModel', formulirSchema);
